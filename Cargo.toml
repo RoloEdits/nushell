@@ -290,6 +290,7 @@ opt-level = 3
 strip = true
 lto = true
 codegen-units = 1
+panic = "abort"
 
 # build with `cargo build --profile profiling`
 # to analyze performance with tooling like linux perf
