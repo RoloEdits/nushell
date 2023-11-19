@@ -286,9 +286,10 @@ trash-support = ["nu-command/trash-support", "nu-cmd-lang/trash-support"]
 sqlite = ["nu-command/sqlite", "nu-cmd-lang/sqlite"]
 
 [profile.release]
-opt-level = "s"     # Optimize for size
-strip = "debuginfo"
-lto = "thin"
+opt-level = 3
+strip = true
+lto = true
+codegen-units = 1
 
 # build with `cargo build --profile profiling`
 # to analyze performance with tooling like linux perf
