@@ -2,12 +2,6 @@ set windows-shell := ["nu", "-c"]
 
 default: build
 
-path := "C:/Program Files/nu"
-
-default: build
-
-path := "C:/Program Files/nu"
-
 build:
 	RUSTFLAGS='-C target-cpu=native' cargo build --release --all
 
