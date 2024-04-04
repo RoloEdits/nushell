@@ -256,7 +256,7 @@ plugin = [
   "nu-protocol/plugin",
   "nu-engine/plugin",
 ]
-default = ["default-no-clipboard", "system-clipboard", "dataframe" ]
+default = ["default-no-clipboard", "system-clipboard"]
 # Enables convenient omitting of the system-clipboard feature, as it leads to problems in ci on linux
 # See https://github.com/nushell/nushell/pull/11535
 default-no-clipboard = [

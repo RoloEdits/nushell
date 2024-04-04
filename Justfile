@@ -3,7 +3,7 @@ set windows-shell := ["nu", "-c"]
 default: build
 
 build:
-	RUSTFLAGS='-C target-cpu=native' cargo build --release --all
+	RUSTFLAGS='-C target-cpu=native' cargo build --release --bin nu
 
 # `nu.exe` can't be replaced if still open and `Program Files` needs admin privilege.
 # Currently broken: need to use `gsudo` to elevate to admin but doesn't seem to work correctly. 
