@@ -34,6 +34,9 @@ use run::{run_commands, run_file, run_repl};
 use signals::ctrlc_protection;
 use std::{borrow::Cow, io::Write, path::PathBuf, str::FromStr, sync::Arc};
 
+#[global_allocator]
+static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
+
 /// Get the directory where the Nushell executable is located.
 fn current_exe_directory() -> PathBuf {
     let mut path = std::env::current_exe().expect("current_exe() should succeed");

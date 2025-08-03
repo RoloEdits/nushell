@@ -348,6 +348,8 @@ simplelog = "0.12"
 time = "0.3.47"
 same-file = "1.0.6"
 
+mimalloc = { version = "0.1.52" }
+
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 # Our dependencies don't use OpenSSL on Windows
 openssl = { version = "0.10.78", features = ["vendored"], optional = true }
@@ -453,9 +455,10 @@ sqlite = [
 ]
 
 [profile.release]
-opt-level = "s"     # Optimize for size
-strip = "debuginfo"
-lto = "thin"
+codegen-units = 1
+lto = true
+# panic = "abort"
+strip = true
 
 # build with `cargo build --profile profiling`
 # to analyze performance with tooling like linux perf
